@@ -21,7 +21,7 @@ set(BUILD_NAME "frank-c64")
 set(FIRMWARE_VERSION "v1.05" CACHE STRING "Firmware version string")
 
 # Set board to Pico 2 (RP2350)
-set(PICO_BOARD pico CACHE STRING "Board type")
+set(PICO_BOARD pico2 CACHE STRING "Board type")
 
 # Board configuration variant (M1, M2, PC or Z0)
 set(BOARD_VARIANT "M1" CACHE STRING "Board variant: M1, M2 or PC")
