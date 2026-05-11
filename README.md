@@ -38,6 +38,16 @@ Classic Commodore 64 BASIC interpreter ready for input.
 
 ![Commodore 64 BASIC](screenshots/screen2.png)
 
+### Game: The Last Ninja
+Demonstrating full game compatibility with smooth C64 emulation.
+
+![The Last Ninja](screenshots/screen3.png)
+
+### Game: Prince of Persia
+Another classic title running at native C64 resolution and colors.
+
+![Prince of Persia](screenshots/screen4.png)
+
 ## Hardware Requirements
 
 - **Raspberry Pi Pico 2** (RP2350) or compatible board
