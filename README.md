@@ -26,6 +26,18 @@ Both boards provide all necessary peripherals out of the box—no additional wir
 - **PWM audio output** — SID emulation without external DAC (directly via GPIO)
 - Multiple CPU speed options: 378, 428 (VGA only), 504 MHz
 
+## Screenshots
+
+### Startup Screen
+Emulator boot screen showing system information and initialization status.
+
+![FRANK C64 Startup](screenshots/screen1.png)
+
+### Commodore 64 BASIC
+Classic Commodore 64 BASIC interpreter ready for input.
+
+![Commodore 64 BASIC](screenshots/screen2.png)
+
 ## Hardware Requirements
 
 - **Raspberry Pi Pico 2** (RP2350) or compatible board
