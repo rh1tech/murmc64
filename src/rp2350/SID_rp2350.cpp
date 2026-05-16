@@ -405,8 +405,6 @@ DigitalRenderer::DigitalRenderer(MOS6581 *sid) : the_sid(sid)
     voice[1].mod_to = &voice[2];
     voice[2].mod_to = &voice[0];
 
-    Reset();
-
     // Calculate cycles per sample (16.16 fixed point)
     sid_cycles_frac = (uint32_t)((float)SID_FREQ / SAMPLE_FREQ * 65536.0f);
 
@@ -415,6 +413,8 @@ DigitalRenderer::DigitalRenderer(MOS6581 *sid) : the_sid(sid)
     // NTSC: 44100 / (60 * 263) = 2.795 samples/line
     samples_per_line_frac = (uint32_t)((float)SAMPLE_FREQ / (SCREEN_FREQ * TOTAL_RASTERS) * 65536.0f);
     sample_accum = 0;
+
+    Reset();
 
     MII_DEBUG_PRINTF("SID: SCREEN_FREQ=%d, TOTAL_RASTERS=%d, samples_per_line=%.3f\n",
            SCREEN_FREQ, TOTAL_RASTERS, (float)samples_per_line_frac / 65536.0f);
