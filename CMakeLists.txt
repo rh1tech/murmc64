@@ -18,19 +18,19 @@ cmake_minimum_required(VERSION 3.13)
 set(BUILD_NAME "frank-c64")
 
 # Firmware version string (set by release.sh or manually)
-set(FIRMWARE_VERSION "v1.05" CACHE STRING "Firmware version string")
+set(FIRMWARE_VERSION "v1.08" CACHE STRING "Firmware version string")
 
 # Set board to Pico 2 (RP2350)
 set(PICO_BOARD pico2 CACHE STRING "Board type")
 
 # Board configuration variant (M1, M2, PC or Z0)
-set(BOARD_VARIANT "M1" CACHE STRING "Board variant: M1, M2 or PC")
+set(BOARD_VARIANT "M2" CACHE STRING "Board variant: M1, M2 or PC")
 
 # Video output type (VGA or HDMI)
-set(VIDEO_TYPE "VGA" CACHE STRING "Video output: VGA or HDMI")
+set(VIDEO_TYPE "HDMI" CACHE STRING "Video output: VGA or HDMI")
 
 # Audio output configuration (I2S or PWM)
-set(AUDIO_TYPE "PWM" CACHE STRING "Audio output: I2S or PWM")
+set(AUDIO_TYPE "I2S" CACHE STRING "Audio output: I2S or PWM")
 
 # CPU overclock configuration (252, 378, 428(VGA), 504 MHz)
 set(CPU_SPEED "378" CACHE STRING "CPU speed: 252, 378, 428 (VGA only), 504 MHz")
@@ -274,6 +274,7 @@ endif()
 
 if(AUDIO_TYPE STREQUAL "I2S")
     target_compile_definitions(${BUILD_NAME} PRIVATE
+        FEATURE_AUDIO_I2S=1
         # Disable SDL and GTK
         # I2S Audio configuration
         # NOTE: HDMI uses PIO1, PS/2 uses PIO0 SM0 (claimed dynamically)
